@@ -48,8 +48,30 @@ Model Waveform
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/e7c7c7f8-ccf2-41ac-b1f3-325989941a6f" />
 
 Program
+Am = 4.1;
+fm = 334;
+Ac = 8.2;
+fc = 3340;
+fs = 33400;
+t = 0:1/fs:2/fm;
+
+m = Am*cos(2*%pi*fm*t);
+subplot(3,1,1);
+plot(t,m);
+
+c = Ac*cos(2*%pi*fc*t);
+subplot(3,1,2);
+plot(t,c);
+s1=(Ac+m).*cos(2*3.14*fc*t);
+s2=(Ac-m).*cos(2*3.14*fc*t);
+s=s1-s2;
+s = m .* c;
+subplot(3,1,3);
+plot(t,s);
 
 Output Graph
+
+<img width="1919" height="1110" alt="Screenshot 2025-08-21 110840" src="https://github.com/user-attachments/assets/a78ab4aa-8ea8-40e9-8a03-ec9d09382d67" />
 
 
 Tablular Column
